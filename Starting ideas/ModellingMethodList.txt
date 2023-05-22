@@ -1,0 +1,11 @@
+list of methods
+
+Anticlutter SEA ----- Needed, planned, implementation + sensor fusion lacking
+Anticlutter SHIP ---- Needed, planned, partial implementation
+Ducts ---- no
+Shadows ---- need testing
+Echo 
+	indirect ---- need testing
+	direct ---- need testing
+	multiple ---- need testing
+Interference ---- Needed(?) untestable atm, check implementation
