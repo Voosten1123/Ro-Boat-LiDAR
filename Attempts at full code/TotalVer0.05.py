@@ -1,7 +1,5 @@
 from rplidar import RPLidar
 from array import *
-import sys
-import random
 import math
 from time import time
 lidar = RPLidar('/dev/ttyUSB0')
@@ -120,6 +118,7 @@ def process_scan(Matrix, RatioVariable, FlagNum, StrengthThres):
                         if Matrix[i-j][2]<SD:
                             SD = Matrix[i-j][2] #passing the new minimum
                             SDa = Matrix[i-j][1] #passing the position of the new minimum
+                            j += 1
                     #--------------------------------------------------
                     #Wall warning part.
                     #Largest boat size is 2.5m = 2500mm. largest buoy is 1.4m at largest.
