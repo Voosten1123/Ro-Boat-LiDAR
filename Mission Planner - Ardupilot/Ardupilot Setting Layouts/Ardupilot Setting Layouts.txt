@@ -1,0 +1,2 @@
+These are the previous settings we had on our ardupilot.
+they're here for safekeeping, just in case we unintentionally brick something.
