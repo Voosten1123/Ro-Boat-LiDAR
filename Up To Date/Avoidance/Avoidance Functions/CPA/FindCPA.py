@@ -24,8 +24,8 @@ def FindCPA (Course, Bearing1, Range1, Time1, Bearing2, Range2, Time2):
         RMLtoBearing = RMLtoBearing - pi
     CPADistance = Range2 * math.sin(RMLtoBearing)                           #Sine rule again, but this time to find the CPA distance
     DistanceToCover = math.sqrt(Range2**2-CPADistance**2)                   #Pythagorean Theorem to find distance between 2nd Detection and CPA
-    Bearing = math.asin(DistanceToCover/Range2)                             #Sine rule to find angle from 2nd bearing
-    CPABearing = math.radians(Bearing2) - Bearing                           #translating that to true bearing
+    PrimaryBearing = math.asin(DistanceToCover/Range2)                             #Sine rule to find angle from 2nd bearing
+    CPABearing = math.radians(Bearing2) - PrimaryBearing                           #translating that to true bearing
     if CPABearing < 0:                                                      #formating (so it doesnt show -20 degrees, but instead 340)
         CPABearing = pi*2 + CPABearing 
     if CPABearing > 6.28:                                                   #formating again (20 degrees instead of 380)
