@@ -79,7 +79,6 @@ def FindInterim (angle1, angle2):
 def CosineRule(SideB, SideC, Adeg):
     #returns the length of the side opposite of angle A, if we know sides B and C
     SideA = math.sqrt(SideB*SideB + SideC*SideC - 2*SideB*SideC*math.cos(math.radians(Adeg)))
-    #print(SideA)
     return SideA
 
 def bearing_to_cartesian(bearing_deg, range):
@@ -115,8 +114,6 @@ def FindCPA (Bearing1_deg, Range1, Time1, Bearing2_deg, Range2, Time2):
 
         #form triangle to get the remaining data on triangle
         Triangle = FindWrongAngle(InterAngle, Range1, Range2)
-        #print(Range1, Range2)
-        #print(Triangle[0])
         
         #if triangle is proper
         if Triangle[0] != -1:
@@ -134,13 +131,10 @@ def FindCPA (Bearing1_deg, Range1, Time1, Bearing2_deg, Range2, Time2):
         #make the bearings into cartesians
         x1, y1 = bearing_to_cartesian(Bearing1_deg, Range1)
         x2, y2 = bearing_to_cartesian(Bearing2_deg, Range2)
-        #print(x1, y1)
-        #print(x2, y2)
 
         #produce movement vector
         dx = x2 - x1
         dy = y2 - y1
-        print(dx, dy)
 
         #distance covered 
         distance_covered = math.sqrt(dx*dx + dy*dy)
@@ -196,5 +190,7 @@ def FindCPA (Bearing1_deg, Range1, Time1, Bearing2_deg, Range2, Time2):
             print("CPA_ETA = "+ str(CPA_Eta))
             print("CPA_Time = "+ str(CPA_Time))
         print("Target RMS = "+ str(target_RMS))
+
+        #TODO change the function to act as an object-callable function
     else:
         print("CPA is in the past")
